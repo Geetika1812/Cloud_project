@@ -1,0 +1,96 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Sorting & Navigation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Sorting Algorithm </h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home" onclick="showSection('home')">Home</a></li>
+            <li><a href="#about" onclick="showSection('about')">About</a></li>
+            <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
+            <li><a href="#sort" onclick="showSection('sort')">Sorting Game</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="home" class="content-section">
+            <h2>Welcome to Our Interactive Demo</h2>
+            <p>This page demonstrates sorting algorithms and dynamic navigation.</p>
+        </section>
+        
+        <section id="about" class="content-section" style="display: none;">
+            <h2>About This Project</h2>
+            <p>This project showcases a sorting algorithm with an interactive UI.
+            The algorithm demonstrated on this page is a simple Reverse Order
+            Sorting algorithm, where a list of numbers input by the user is 
+            sorted in descending order. The user enters a series of numbers 
+            separated by commas, and upon clicking the "Sort in Reverse" 
+            button, the numbers are processed and displayed in decreasing order.
+             This interactive sorting feature helps visualize how numbers can be ordered in reverse,
+              providing a hands-on experience of sorting algorithms in action.
+            </p>
+        </section>
+        
+        <section id="contact" class="content-section" style="display: none;">
+            <h2>Contact Us</h2>
+            <form onsubmit="submitForm(event)">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" required></textarea>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        
+        <section id="sort" class="content-section" style="display: none;">
+            <h2>Reverse Order Sort Example</h2>
+            <p>Enter numbers separated by commas and click sort:</p>
+            <input type="text" id="userInput" placeholder="e.g. 5,3,8,4,2">
+            <button onclick="navigateToSortResult()">Sort in Reverse</button>
+        </section>
+        
+        <section id="sortResult" class="content-section" style="display: none;">
+            <h2>Sorted Result</h2>
+            <p id="result"></p>
+            <button onclick="showSection('sort')">Back</button>
+        </section>
+    </main>
+    <aside>
+        <h2>Product Related to This Page</h2>
+        <a href="https://www.amazon.com/Sorting-Algorithms-Handbook-Practical-Implementations-ebook/dp/B0CGJXWQV2/ref=sr_1_7" target="_blank" style="display: block;">
+            <img src="https://m.media-amazon.com/images/I/71J2YX2yVoL._SL1500_.jpg" 
+                 alt="Sorting Algorithm" 
+                 style="width: 100%; max-width: 150px; display: block;">
+        </a>
+    </aside>
+    
+    <footer>
+        <p class="addendum">
+            <strong>Addendum:</strong><br>
+            • This project demonstrates a simple Reverse Order Sorting algorithm using JavaScript.<br>
+            • The script allows users to input numbers, which are then sorted in descending order upon clicking a button.<br>
+            • Input validation ensures only valid numbers are processed.<br>
+            • The layout is designed using a responsive CSS Grid for a structured UI.<br>
+            • Future improvements may include additional sorting algorithms and interactive visualizations.
+        </p>
+        <p>Last updated: <span id="lastModified"></span></p>
+    </footer>
+    
+    <script type="text/javascript">
+         var x = document.lastModified;
+         document.getElementById('lastModified').textContent = x;
+    </script>
+</body>
+</html>
